@@ -1,18 +1,9 @@
-window.addEventListener('keydown', playSound);
+const synth = window.speechSynthesis;
 
-function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+function onSubmit(e) {
+  e.preventDefault();
 
-  if (!audio) return;
-
-  audio.currentTime = 0;
-
-  audio.play();
-
-  key.classList.add('playing');
-
-  setTimeout(() => {
-    key.classList.remove('playing');
-  }, 100);
+  const textInput = document.getElementById('text-input')
 }
+
+document.getElementById('form').addEventListener('submit', onSubmit)
