@@ -1,9 +1,17 @@
-const synth = window.speechSynthesis;
+// Sealing - pevents properties from being added or removed. Can still be changed.
 
-function onSubmit(e) {
-  e.preventDefault();
+// Freezing - Prevents properties from being added, removed or changed
 
-  const textInput = document.getElementById('text-input')
-}
+const rectObj = {
+  name: 'Rectangle 1'
+  width: 10,
+  height: 10,
+};
 
-document.getElementById('form').addEventListener('submit', onSubmit)
+Object.freeze(circleObj);
+
+descriptors = Object.getOwnPropertyDescriptor(rectObj)
+
+circleObj.color = 'blue';
+
+console.log(rectObj);
