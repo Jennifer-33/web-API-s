@@ -1,9 +1,8 @@
-const synth = window.speechSynthesis;
+const axios = require('axios');
 
-function onSubmit(e) {
-  e.preventDefault();
-
-  const textInput = document.getElementById('text-input')
+async function getPost() {
+  const res = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+  console.log(res.data);
 }
 
-document.getElementById('form').addEventListener('submit', onSubmit)
+getPost();
